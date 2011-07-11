@@ -1,0 +1,12 @@
+Source: openpanel-openapp-passwd
+Section: misc
+Priority: optional
+Maintainer: OpenPanel packager <packages@openpanel.com>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: openpanel-openapp-passwd
+Architecture: any
+Depends: openpanel-authd, openpanel-coreval, openpanel-api-sh, ${shlibs:Depends}, ${misc:Depends}
+Description: OpenPanel authd script to set OpenApp passwords
+  set openapp passwords
