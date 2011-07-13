@@ -21,7 +21,7 @@ if [ -z "$PASSWORD" ]; then
   exit 1
 fi
 
-echo "$PASSWORD" | /usr/bin/openapp-"$APP"-passwd || {
+echo "$PASSWORD" | /usr/bin/openapp-"$APP"-passwd stdin || {
   echo "Setting password failed"
   exit 1
 }
