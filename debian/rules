@@ -14,7 +14,7 @@ BUILD_ROOT=$(CURDIR)/debian/tmp
 install:
 	rm -rf ${BUILD_ROOT}
 	mkdir -p ${BUILD_ROOT}/var/openpanel/tools
-	install -m 755 openapp-passwd ${BUILD_ROOT}/var/openpanel/tools
+	install -m 755 openapp-call ${BUILD_ROOT}/var/openpanel/tools
 
 binary-indep:
 

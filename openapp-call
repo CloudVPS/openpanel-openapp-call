@@ -15,14 +15,25 @@ if [ -z "$APP" ]; then
   exit 1
 fi
 
-PASSWORD="$2"
-if [ -z "$PASSWORD" ]; then
-  echo "Missing password"
+SCR="$2"
+if [ -z "$SCR" ]; then
+  echo "Need script identifier"
   exit 1
 fi
 
-echo "$PASSWORD" | /usr/bin/openapp-"$APP"-passwd stdin || {
-  echo "Setting password failed"
+DATA="$3"
+if [ -z "$DATA" ]; then
+  echo "Missing data"
+  exit 1
+fi
+
+if [ ! -x /usr/bin/openapp-"$APP"-"$SCR" ]
+then
+  echo "Script not found"
+  exit 1
+fi
+
+echo "$DATA" | /usr/bin/openapp-"$APP"-"$SCR" stdin || {
+  echo "Call failed"
   exit 1
 }
-
