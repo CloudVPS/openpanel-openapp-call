@@ -21,19 +21,18 @@ if [ -z "$SCR" ]; then
   exit 1
 fi
 
-DATA="$3"
-if [ -z "$DATA" ]; then
-  echo "Missing data"
-  exit 1
-fi
-
 if [ ! -x /usr/bin/openapp-"$APP"-"$SCR" ]
 then
   echo "Script not found"
   exit 1
 fi
 
-echo "$DATA" | /usr/bin/openapp-"$APP"-"$SCR" stdin || {
+DATA="$3"
+if [ -z "$DATA" ]; then
+  /usr/bin/openapp-"$APP"-"$SCR"
+  exit 0
+else
+  echo "$DATA" | /usr/bin/openapp-"$APP"-"$SCR" stdin || {
   echo "Call failed"
   exit 1
 }
