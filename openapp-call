@@ -36,3 +36,4 @@ else
   echo "Call failed"
   exit 1
 }
+fi
