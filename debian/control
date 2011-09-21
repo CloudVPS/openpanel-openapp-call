@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 5)
 Standards-Version: 3.7.2
 
 Package: openpanel-openapp-call
-Architecture: any
+Architecture: all
 Depends: openpanel-authd, openpanel-coreval, openpanel-api-sh, ${shlibs:Depends}, ${misc:Depends}
 Description: OpenPanel authd script to call OpenApp scripts
   call openapp scripts
